@@ -62,7 +62,7 @@ object FillerWordDetector {
 
         val fillerCount = breakdown.values.sum()
         val wpm = if (durationSeconds > 0) (totalWords * 60) / durationSeconds else 0
-        val pauseCount = transcript.split(Regex("[.!?]{2,}|…|\.{3,}")).size - 1
+        val pauseCount = transcript.split(Regex("[.!?]{2,}|…|\\.{3,}")).size - 1
         val cleanStreakSeconds = if (positions.size <= 1) durationSeconds
         else {
             val wordsPerSecond = if (durationSeconds > 0) totalWords.toFloat() / durationSeconds else 1f
